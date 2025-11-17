@@ -9,8 +9,8 @@
 
 if {"::tcltest" ni [namespace children]} {
     package require tcltest
-    namespace import ::tcltest::*
 }
+namespace import ::tcltest::*
 
 # Load the extension
 test xcursor-1.1 {load xcursor extension} -body {
@@ -23,4 +23,3 @@ test xcursor-1.2 {xcursor command exists} -body {
 
 # Cleanup
 cleanupTests
-return

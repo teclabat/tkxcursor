@@ -35,7 +35,6 @@ if {[llength $::tcltest::matchFiles] > 0} {
 
 set timeCmd {clock format [clock seconds]}
 puts stdout "Tests began at [eval $timeCmd]"
-
 puts stdout "xcursor [package provide xcursor]"
 
 # Source each of the specified tests
@@ -50,5 +49,3 @@ foreach file [lsort [::tcltest::getMatchingFiles]] {
 # Cleanup
 puts stdout "\nTests ended at [eval $timeCmd]"
 ::tcltest::cleanupTests 1
-
-return
