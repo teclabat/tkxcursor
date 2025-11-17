@@ -7,10 +7,10 @@
 # See the file "LICENSE" for information on usage and redistribution
 # of this file.
 
-if {[lsearch [namespace children] ::tcltest] == -1} {
-    package require tcltest 2
-    namespace import ::tcltest::*
+if {"::tcltest" ni [namespace children]} {
+    package require tcltest
 }
+namespace import ::tcltest::*
 
 # Load the extension
 test xcursor-1.1 {load xcursor extension} -body {
@@ -23,4 +23,3 @@ test xcursor-1.2 {xcursor command exists} -body {
 
 # Cleanup
 cleanupTests
-return
