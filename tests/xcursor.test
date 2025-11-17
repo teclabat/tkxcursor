@@ -1,0 +1,26 @@
+# xcursor.test --
+#
+# Tests for the xcursor extension
+#
+# Copyright (c) 2025 TERMA Technologies GmbH
+#
+# See the file "LICENSE" for information on usage and redistribution
+# of this file.
+
+if {[lsearch [namespace children] ::tcltest] == -1} {
+    package require tcltest 2
+    namespace import ::tcltest::*
+}
+
+# Load the extension
+test xcursor-1.1 {load xcursor extension} -body {
+    package require xcursor
+} -result {1.0.0}
+
+test xcursor-1.2 {xcursor command exists} -body {
+    info commands xcursor
+} -result {xcursor}
+
+# Cleanup
+cleanupTests
+return

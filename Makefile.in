@@ -137,8 +137,9 @@ TCLSH_PROG	= @TCLSH_PROG@
 
 # Installed tclsh for testing
 INSTALLED_TCLSH	= @INSTALLED_TCLSH@
+INSTALLED_WISH	= @INSTALLED_WISH@
 
-INCLUDES	= @PKG_INCLUDES@ @TCL_INCLUDES@
+INCLUDES	= @PKG_INCLUDES@ @TCL_INCLUDES@ @TK_INCLUDES@
 
 PKG_CFLAGS	= @PKG_CFLAGS@
 
@@ -195,7 +196,7 @@ install-doc: doc
 	done
 
 test: binaries install-bin-binaries install-lib-binaries
-	$(INSTALLED_TCLSH) `@CYGPATH@ $(srcdir)/tests/all.tcl` $(TESTFLAGS)
+	$(INSTALLED_WISH) `@CYGPATH@ $(srcdir)/tests/all.tcl` $(TESTFLAGS)
 
 #========================================================================
 # $(PKG_LIB_FILE) should be listed as part of the BINARIES variable

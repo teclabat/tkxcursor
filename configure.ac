@@ -41,8 +41,8 @@ TEA_LOAD_TCLCONFIG
 # Load the tkConfig.sh file if necessary (commented out for now)
 #-----------------------------------------------------------------------
 
-#TEA_PATH_TKCONFIG
-#TEA_LOAD_TKCONFIG
+TEA_PATH_TKCONFIG
+TEA_LOAD_TKCONFIG
 
 #-----------------------------------------------------------------------
 # Handle the --prefix=... option by defaulting to what Tcl gave.
@@ -68,7 +68,7 @@ TEA_SETUP_COMPILER
 TEA_ADD_SOURCES([generic/xcursor.c])
 TEA_ADD_HEADERS([])
 TEA_ADD_INCLUDES([])
-TEA_ADD_LIBS([])
+TEA_ADD_LIBS([-lXcursor])
 TEA_ADD_CFLAGS([])
 TEA_ADD_STUB_SOURCES([])
 TEA_ADD_TCL_SOURCES([])
@@ -83,7 +83,7 @@ TEA_ADD_TCL_SOURCES([])
 
 TEA_PUBLIC_TCL_HEADERS
 #TEA_PRIVATE_TCL_HEADERS
-#TEA_PUBLIC_TK_HEADERS
+TEA_PUBLIC_TK_HEADERS
 #TEA_PRIVATE_TK_HEADERS
 #TEA_PATH_X
 
