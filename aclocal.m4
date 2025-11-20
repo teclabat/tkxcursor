@@ -21,8 +21,10 @@ AC_DEFUN([TEA_PROG_INSTALLED_TCLSH], [
     AC_MSG_CHECKING([for installed tclsh])
     if test "${TEA_PLATFORM}" = "windows"; then
         INSTALLED_TCLSH_NAME="tclsh${TCL_MAJOR_VERSION}${TCL_MINOR_VERSION}${EXEEXT}"
+        INSTALLED_WISH_NAME="wish${TCL_MAJOR_VERSION}${TCL_MINOR_VERSION}${EXEEXT}"
     else
         INSTALLED_TCLSH_NAME="tclsh${TCL_MAJOR_VERSION}${TCL_MINOR_VERSION}"
+        INSTALLED_WISH_NAME="tclsh${TCL_MAJOR_VERSION}${TCL_MINOR_VERSION}"
     fi
 
     # Search for installed tclsh in standard locations
@@ -39,11 +41,14 @@ AC_DEFUN([TEA_PROG_INSTALLED_TCLSH], [
 
     if test -n "${REAL_INSTALLED_BIN_DIR}" ; then
         INSTALLED_TCLSH="${REAL_INSTALLED_BIN_DIR}${INSTALLED_TCLSH_NAME}"
+        INSTALLED_WISH="${REAL_INSTALLED_BIN_DIR}${INSTALLED_WISH_NAME}"
     else
         # Fallback to exec_prefix/bin
         INSTALLED_TCLSH="${exec_prefix}/bin/${INSTALLED_TCLSH_NAME}"
+        INSTALLED_WISH="${exec_prefix}/bin/${INSTALLED_WISH_NAME}"
     fi
 
     AC_MSG_RESULT([${INSTALLED_TCLSH}])
     AC_SUBST(INSTALLED_TCLSH)
+    AC_SUBST(INSTALLED_WISH)
 ])
